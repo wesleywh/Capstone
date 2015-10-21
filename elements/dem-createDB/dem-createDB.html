@@ -61,12 +61,19 @@
 	    }
 	</style>
 	<div style="margin-left:20%">
-		<div class="box-container">
-			<div class="text-container">
-				<center>
-					<h2>Create A Database</h2>
-					<h3>Please Fill Out All Of The Following Information:</h3>
-				</center>
+		<template is="dom-if" if="{{creatingDB}}">
+			<div style="width:500px; height:50px;margin-top:100px;">
+				<strong>{{updateMessage}}</strong>
+				<dem-loadingbar progress-bar="true" current="{{loadingCurrent}}" max="{{loadingMax}}"></dem-loadingbar>
+			</div>
+		</template>
+		<template is="dom-if" if="{{!creatingDB}}">
+			<div class="box-container">
+				<div class="text-container">
+					<center>
+						<h2>Create A Database</h2>
+						<h3>Please Fill Out All Of The Following Information:</h3>
+					</center>
 					<div style="margin-left:40px;">
 						<span class="inline">Database Name:</span>
 						<input class="input-field inline" style="margin-left:15px;" value="{{username}}"></input>
@@ -97,9 +104,11 @@
 						</paper-dropdown-menu>
 					</div>
 					<paper-button raised class="clear-button">Clear Fields</paper-button>
-					<paper-button raised class="submit-button">Create</paper-button>
+					<paper-button raised class="submit-button" on-click="createDB">Create</paper-button>
+				</div>
 			</div>
-		</div>
+		</template>
+		<br/>
 	</div>
 	</template>
 	<script src="dem-createDB.js"></script>

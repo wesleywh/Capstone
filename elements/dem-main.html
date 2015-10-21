@@ -1,0 +1,43 @@
+<dom-module id="dem-main">
+	<template>
+		<style>
+		.subtext{
+			margin-bottom:0px;
+			bottom:0px;
+			left:20px;
+			position: absolute;
+		}
+		.website-background{
+			/*background-image: url("/Capstone/images/background-waves.jpg");*/
+			/*background:#FFFFE0;*/
+		}
+		</style>
+		<div style="margin:0px; padding:0px; height:100%" class="website-background">
+			<paper-toolbar style="background: #333;height:70px;">
+				<h1 style="margin-top:0px;">Demeter</h1><br/>
+				<h3 class="subtext">Database Creation and Management System</h3>
+			</paper-toolbar>
+			<dem-sidemenu page="{{selectedPage}}"></dem-sidemenu>
+			<iron-pages id="pageChanger" selected="{{selectedPage}}">
+				<dem-home></dem-home>
+				<dem-createDB></dem-createDB>	
+				<dem-help-page></dem-help-page>
+			</iron-pages>
+			<center>
+		</div>
+	</template>
+</dom-module>
+<script>
+Polymer({
+	is:"dem-main",
+	ready:function(){
+		this.selectedPage = 0;
+	},
+	toggleProgress: function(){
+		this.progressBar = true;
+	},
+	toggleSpace: function(){
+		this.progressBar = false;
+	}
+});
+</script>

@@ -1,0 +1,113 @@
+<!-- Code updated 10/21/2015 -->
+<dom-module id="dem-home">
+	<template>
+	<style>
+		.container-div{
+			margin-left:300px; 
+			margin-top:50px;
+			width:78%;
+		}
+		.space-calculator-div{
+			display:inline-block; 
+			width:25%
+		}
+		.login-info-div{
+			display:inline-block; 
+			margin-left:40px; 
+			width:25%
+		}
+		.login-info-left{
+			float:left;
+			line-height:20pt;
+		}
+		.login-info-right{
+			display:inline-block; 
+			margin-left:20px;
+			line-height:20pt;
+		}
+		.loading-bar-div{
+			display:inline-block; 
+			margin-left:40px; 
+			margin-top:50px; 
+			width:25%
+		}
+	</style>
+	<style is="custom-style">
+	    progress-bubble {
+	    	width: 100px;
+	    	height: 100px;
+	        /*--progress-bubble-stroke-color: rgba(255, 0, 0, 0.8);*/
+	        /*--progress-bubble-bg-stroke-color: rgba(193, 193, 193, 0.2);*/
+	        /*--progress-bubble-background: transparent;*/
+	        /*--progress-bubble-reflection-display: none;*/
+	    }
+	</style>
+	<div class="container-div">
+		<h1> Database Information</h1>
+			<div class="space-calculator-div">
+				<h3>Space Used:</h3>
+				<progress-bubble value="4" max="10" stroke-width="10" style="width:200px; height:200px">
+					<strong>
+						40%
+					</strong>
+				</progress-bubble>
+			</div>
+			<div class="login-info-div">
+				<h3>Login Information:</h3>
+				<div class="login-info-left">
+					<b>
+					Database Type:<br/>
+					Size:<br/>
+					IP Address:<br/>
+					NetID Login:<br/>
+					</b>
+				</div>
+				<div class="login-info-right">
+					<span>MySQL</span><br/>
+					<span>8 Gigabytes</span><br/>
+					<span>192.168.0.1</span><br/>
+					<span>wesleywh</span><br/>
+				</div>
+			</div>
+			<div class="loading-bar-div">
+				<dem-loadingbar current="4" max="10"></dem-loadingbar>
+				<span style="display:inline-block">Input A Number (0 - 10):</span>
+				<paper-input style="width:100px; display:inline-block;" type="number" value="{{inputValue}}"></paper-input>
+			</div>
+
+		<!-- Line Spacer -->
+
+			<div class="space-calculator-div">
+				<h3>Space Used:</h3>
+				<progress-bubble value="9" max="10" stroke-width="10" style="width:200px; height:200px">
+					<strong>
+						90%
+					</strong>
+				</progress-bubble>
+			</div>
+			<div class="login-info-div">
+				<h3>Login Information:</h3>
+				<div class="login-info-left">
+					<b>
+					Database Type:<br/>
+					Size:<br/>
+					IP Address:<br/>
+					NetID Login:<br/>
+					</b>
+				</div>
+				<div class="login-info-right">
+					<span>Oracle</span><br/>
+					<span>4 Gigabytes</span><br/>
+					<span>192.168.1.16</span><br/>
+					<span>wesleywh</span><br/>
+				</div>
+			</div>
+			<div class="loading-bar-div">
+				<dem-loadingbar current="9" max="10"></dem-loadingbar>
+				<span style="display:inline-block">Input A Number (0 - 10):</span>
+				<paper-input style="width:100px; display:inline-block;" type="number" value="{{inputValue}}"></paper-input>
+			</div>
+	</div>
+	</template>
+	<script src="dem-home.js"></script>
+</dom-module>

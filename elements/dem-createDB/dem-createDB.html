@@ -63,6 +63,7 @@
 	<div style="margin-left:20%">
 		<template is="dom-if" if="{{creatingDB}}">
 			<div style="width:500px; height:50px;margin-top:100px;">
+				<paper-spinner active="true" style="width:25px; height:25px"></paper-spinner>
 				<strong>{{updateMessage}}</strong>
 				<dem-loadingbar progress-bar="true" current="{{loadingCurrent}}" max="{{loadingMax}}"></dem-loadingbar>
 			</div>
